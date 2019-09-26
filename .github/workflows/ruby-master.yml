@@ -9,7 +9,7 @@ jobs:
       matrix:
         test_tool: [ "rubygems", "bundler" ]
     container:
-      image: rubylang/ruby:trunk-nightly-bionic
+      image: rubylang/ruby:master-nightly-bionic
       env:
         TEST_TOOL: ${{ matrix.test_tool }}
     steps:
