@@ -18,6 +18,8 @@ jobs:
       - name: ruby -v
         run: ruby -v
       - name: Install Dependencies
-        run: util/ci.sh before_script
+        run: |
+          gem install rake --no-document
+          util/ci.sh before_script
       - name: Run Test
         run: util/ci.sh script
