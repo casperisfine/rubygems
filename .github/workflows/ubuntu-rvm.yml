@@ -7,14 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: [ 'jruby-9.2.8.0' ]
+        ruby: [ 'ruby-head', 'jruby-9.2.8.0' ]
         test_tool: [ "rubygems", "bundler" ]
-        include:
-          - ruby: ruby-head
-            test_tool: bundler
-            rgv: ..
-            bdv: master
         exclude:
+          - ruby: ruby-head
+            test_tool: rubygems
           - ruby: jruby-9.2.8.0
             test_tool: bundler
     steps:
@@ -50,5 +47,3 @@ jobs:
       continue-on-error: true
       env:
         TEST_TOOL: ${{ matrix.test_tool }}
-        RGV: ${{ matrix.rgv }}
-        BDV: ${{ matrix.bdv }}
