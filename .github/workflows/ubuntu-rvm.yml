@@ -15,10 +15,6 @@ jobs:
           - ruby: jruby-9.2.8.0
             test_tool: bundler
     steps:
-    - name: Setup Requirements
-      run: |
-        sudo apt update -qy
-        sudo apt install groff-base graphviz -qy
     - uses: actions/checkout@master
     - run: git submodule update -i
     - name: Fixed world writable dirs

@@ -13,7 +13,7 @@ jobs:
       - name: Setup Requirements
         run: |
           apt update -qy
-          apt install zip groff-base graphviz -qy
+          apt install zip -qy
           gem install rake --no-document
       - uses: actions/checkout@master
       - run: git submodule update -i

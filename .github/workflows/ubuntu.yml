@@ -10,10 +10,6 @@ jobs:
         ruby: [ '2.3.x', '2.4.x', '2.5.x', '2.6.x' ]
         test_tool: [ "rubygems", "bundler" ]
     steps:
-      - name: Setup Requirements
-        run: |
-          sudo apt update -qy
-          sudo apt install groff-base graphviz -qy
       - uses: actions/checkout@master
       - run: git submodule update -i
       - name: Fixed world writable dirs
